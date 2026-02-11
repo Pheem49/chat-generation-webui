@@ -22,3 +22,6 @@ loras/*
 !loras/.keep
 training/*
 !training/.keep
+
+models/*.gguf
+*.gguf
