@@ -15,6 +15,10 @@
 
 A Gradio web UI for Large Language Models.
 
+Credits:
+- **Original Creator:** [oobabooga](https://github.com/oobabooga) (text-generation-webui)
+- **Current Developer:** [Pheem49](https://github.com/Pheem49) (chat-generation-webui)
+
 [Try the Deep Reason extension](https://oobabooga.gumroad.com/l/deep_reason)
 
 |![Image1](https://github.com/oobabooga/screenshots/raw/main/INSTRUCT-3.5.png) | ![Image2](https://github.com/oobabooga/screenshots/raw/main/CHAT-3.5.png) |
