@@ -90,7 +90,7 @@ signal.signal(signal.SIGINT, signal_handler)
 
 def create_interface():
 
-    title = 'Text Generation Web UI'
+    title = 'Chat Generation Web UI (Pheem49 Edition)'
 
     # Password authentication
     auth = []
