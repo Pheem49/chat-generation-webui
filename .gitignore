@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+env/
+.env
+
+# VSCode
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# TextGen WebUI Specific
+models/*
+!models/.keep
+loras/*
+!loras/.keep
+training/*
+!training/.keep
