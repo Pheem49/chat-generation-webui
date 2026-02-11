@@ -429,19 +429,4 @@ python download-model.py organization/model
 
 Run `python download-model.py --help` to see all the options.
 
-## Documentation
 
-https://github.com/oobabooga/text-generation-webui/wiki
-
-## Google Colab notebook
-
-https://colab.research.google.com/github/oobabooga/text-generation-webui/blob/main/Colab-TextGen-GPU.ipynb
-
-## Community
-
-https://www.reddit.com/r/Oobabooga/
-
-## Acknowledgments
-
-- In August 2023, [Andreessen Horowitz](https://a16z.com/) (a16z) provided a generous grant to encourage and support my independent work on this project. I am **extremely** grateful for their trust and recognition.
-- This project was inspired by [AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) and wouldn't exist without it.
