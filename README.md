@@ -11,13 +11,20 @@
 </div>
 <hr>
 
-# Text Generation Web UI
+# Chat Generation Web UI (Pheem49 Edition)
 
-A Gradio web UI for Large Language Models.
+**Web UI สำหรับรัน AI โมเดลภาษาขนาดใหญ่ (LLM) บนเครื่องของคุณเอง ง่าย สวย และเป็นส่วนตัว**
+*(A Gradio web UI for Large Language Models - Customized by Pheem49)*
 
 Credits:
 - **Original Creator:** [oobabooga](https://github.com/oobabooga) (text-generation-webui)
 - **Current Developer:** [Pheem49](https://github.com/Pheem49) (chat-generation-webui)
+
+## 📝 บันทึกจากผู้พัฒนา (Developer's Note)
+
+สวัสดีครับ! ผม **Pheem49** เองครับ โปรเจกต์นี้ผมนำมาปรับปรุงต่อเพื่อให้ใช้งานง่ายและเข้ากับคนไทยมากขึ้น
+ตั้งใจทำเพื่อให้ทุกคนได้ลองเล่น AI แบบ Local กันง่ายๆ หวังว่าจะชอบกันนะครับ
+ถ้ามีอะไรแนะนำ ติชม หรืออยากให้เพิ่มฟีเจอร์ไหน แจ้งมาได้เลยครับ!
 
 [Try the Deep Reason extension](https://oobabooga.gumroad.com/l/deep_reason)
 
@@ -25,30 +32,22 @@ Credits:
 |:---:|:---:|
 |![Image1](https://github.com/oobabooga/screenshots/raw/main/DEFAULT-3.5.png) | ![Image2](https://github.com/oobabooga/screenshots/raw/main/PARAMETERS-3.5.png) |
 
-## 🔥 News
+## 🔥 อัปเดตล่าสุด (News)
 
-- The project now supports **image generation**! Including Z-Image-Turbo, 4bit/8bit quantization, `torch.compile`, and LLM-generated prompt variations ([tutorial](https://github.com/oobabooga/text-generation-webui/wiki/Image-Generation-Tutorial)).
+- รองรับการสร้างรูปภาพแล้ว! (Image Generation) รวมถึง Z-Image-Turbo, 4bit/8bit quantization, และช่วยแต่ง prompt ด้วย LLM ([ดูวิธีใช้](https://github.com/oobabooga/text-generation-webui/wiki/Image-Generation-Tutorial)).
 
-## Features
+## ความสามารถเด่น (Features)
 
-- Supports multiple local text generation backends, including [llama.cpp](https://github.com/ggerganov/llama.cpp), [Transformers](https://github.com/huggingface/transformers), [ExLlamaV3](https://github.com/turboderp-org/exllamav3), [ExLlamaV2](https://github.com/turboderp-org/exllamav2), and [TensorRT-LLM](https://github.com/NVIDIA/TensorRT-LLM) (the latter via its own [Dockerfile](https://github.com/oobabooga/text-generation-webui/blob/main/docker/TensorRT-LLM/Dockerfile)).
-- Easy setup: Choose between **portable builds** (zero setup, just unzip and run) for GGUF models on Windows/Linux/macOS, or the one-click installer that creates a self-contained `installer_files` directory.
-- 100% offline and private, with zero telemetry, external resources, or remote update requests.
-- **File attachments**: Upload text files, PDF documents, and .docx documents to talk about their contents.
-- **Vision (multimodal models)**: Attach images to messages for visual understanding ([tutorial](https://github.com/oobabooga/text-generation-webui/wiki/Multimodal-Tutorial)).
-- **Image generation**: A dedicated tab for `diffusers` models like **Z-Image-Turbo**. Features 4-bit/8-bit quantization and a persistent gallery with metadata ([tutorial](https://github.com/oobabooga/text-generation-webui/wiki/Image-Generation-Tutorial)).
-- **Web search**: Optionally search the internet with LLM-generated queries to add context to the conversation.
-- Aesthetic UI with dark and light themes.
-- Syntax highlighting for code blocks and LaTeX rendering for mathematical expressions.
-- `instruct` mode for instruction-following (like ChatGPT), and `chat-instruct`/`chat` modes for talking to custom characters.
-- Automatic prompt formatting using Jinja2 templates. You don't need to ever worry about prompt formats.
-- Edit messages, navigate between message versions, and branch conversations at any point.
-- Multiple sampling parameters and generation options for sophisticated text generation control.
-- Switch between different models in the UI without restarting.
-- Automatic GPU layers for GGUF models (on NVIDIA GPUs).
-- Free-form text generation in the Notebook tab without being limited to chat turns.
-- OpenAI-compatible API with Chat and Completions endpoints, including tool-calling support – see [examples](https://github.com/oobabooga/text-generation-webui/wiki/12-%E2%80%90-OpenAI-API#examples).
-- Extension support, with numerous built-in and user-contributed extensions available. See the [wiki](https://github.com/oobabooga/text-generation-webui/wiki/07-%E2%80%90-Extensions) and [extensions directory](https://github.com/oobabooga/text-generation-webui-extensions) for details.
+- **รองรับ Backend หลากหลาย**: ไม่ว่าจะเป็น [llama.cpp](https://github.com/ggerganov/llama.cpp), [Transformers](https://github.com/huggingface/transformers), [ExLlamaV3](https://github.com/turboderp-org/exllamav3), และอื่นๆ อีกเพียบ
+- **ติดตั้งง่าย**: มีแบบ Portable (แตกไฟล์ใช้ได้เลย) หรือ One-click installer ที่จัดการทุกอย่างให้เสร็จสรรพ
+- **ส่วนตัว 100%**: ทำงานแบบ Offline ไม่มีการส่งข้อมูลออกข้างนอก ไม่มีการเก็บ Telemetry ใดๆ ทั้งสิ้น
+- **คุยกับไฟล์เอกสาร**: อัปโหลด Text, PDF, หรือ Word แล้วคุยถามตอบจากเนื้อหาในไฟล์ได้เลย
+- **มองเห็นภาพ**: ส่งรูปให้ AI ดูแล้วถามคำถามเกี่ยวกับรูปนั้นได้ (Multimodal)
+- **ค้นหาข้อมูลจากเน็ต**: ให้ AI ค้นหาข้อมูลล่าสุดมาตอบคำถามได้
+- **UI สวยงาม**: ปรับแต่ง Theme ได้ตามใจชอบ มี Dark Mode สบายตา
+- **โหมดหลากหลาย**: จะคุยเล่น (Chat), สั่งงาน (Instruct), หรือเขียนนิยาย (Notebook) ก็ทำได้หมด
+- **API พร้อมใช้**: มี API ที่รองรับ OpenAI format ให้เอาไปต่อกับแอปอื่นได้ทันที
+
 
 ## How to install
 
@@ -87,7 +86,7 @@ python server.py --portable --api --auto-launch
 # When done working, deactivate
 deactivate
 ```
-555555
+
 
 #### Option 3: One-click installer
 
