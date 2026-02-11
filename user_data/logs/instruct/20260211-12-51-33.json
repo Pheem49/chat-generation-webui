@@ -1,5 +1,23 @@
 {
-    "internal": [],
-    "visible": [],
-    "metadata": {}
+    "internal": [
+        [
+            "hi",
+            ""
+        ]
+    ],
+    "visible": [
+        [
+            "hi",
+            ""
+        ]
+    ],
+    "metadata": {
+        "user_0": {
+            "timestamp": "Feb 11, 2026 13:18"
+        },
+        "assistant_0": {
+            "timestamp": "Feb 11, 2026 13:18",
+            "model_name": "None"
+        }
+    }
 }
