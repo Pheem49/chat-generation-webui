@@ -32,6 +32,7 @@ Credits:
 |:---:|:---:|
 |![Image1](https://github.com/oobabooga/screenshots/raw/main/DEFAULT-3.5.png) | ![Image2](https://github.com/oobabooga/screenshots/raw/main/PARAMETERS-3.5.png) |
 
+## อัปเดตล่าสุด (New)
 
 - รองรับการสร้างรูปภาพแล้ว! (Image Generation) รวมถึง **Z-Image-Turbo**, **4bit/8bit quantization**, และระบบ **Prompt Enhancement ด้วย LLM** เพื่อช่วยปรับปรุงคำสั่งก่อนสร้างภาพ  
   ([ดูวิธีใช้](https://github.com/oobabooga/text-generation-webui/wiki/Image-Generation-Tutorial))
