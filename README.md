@@ -32,7 +32,6 @@ Credits:
 |:---:|:---:|
 |![Image1](https://github.com/oobabooga/screenshots/raw/main/DEFAULT-3.5.png) | ![Image2](https://github.com/oobabooga/screenshots/raw/main/PARAMETERS-3.5.png) |
 
-## 🔥 อัปเดตล่าสุด (News)
 
 ## 🔥 อัปเดตล่าสุด (News)
 

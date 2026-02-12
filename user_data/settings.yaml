@@ -1,1 +1,7 @@
 mode: chat-instruct
+preset: Instruct
+enable_thinking: false
+temperature: 1
+min_p: 0.2
+top_p: 1
+top_k: 0
