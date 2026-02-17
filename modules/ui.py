@@ -10,6 +10,7 @@ import modules.extensions as extensions_module
 from modules import shared
 from modules.chat import load_history
 from modules.utils import gradio
+from modules import i18n
 
 # Global state for auto-saving UI settings with debouncing
 _auto_save_timer = None
@@ -583,4 +584,51 @@ def create_refresh_button(refresh_component, refresh_method, refreshed_args, ele
         outputs=[refresh_component]
     )
 
+    refresh_button = gr.Button(refresh_symbol, elem_classes=elem_class, interactive=interactive)
+    refresh_button.click(
+        fn=lambda: {k: tuple(v) if type(k) is list else v for k, v in refresh().items()},
+        inputs=[],
+        outputs=[refresh_component]
+    )
+
     return refresh_button
+
+def create_language_select_ui():
+    """Create language selection dropdown"""
+    available_languages = i18n.get_available_languages()
+    
+    # Use English as default if current locale not found
+    current_value = i18n.LOCALE if i18n.LOCALE in available_languages else 'en'
+    
+    language_dropdown = gr.Dropdown(
+        choices=available_languages,
+        value=current_value,
+        label='Language',
+        elem_classes='slim-dropdown'
+    )
+    
+    apply_button = gr.Button('Apply and Restart', variant='primary')
+    
+    def on_apply(language):
+        # In a real app we might reload the page, but here we just set the variable
+        # and maybe trigger a restart if possible, or just save settings.
+        # For now, let's just save it to settings.yaml so it persists.
+        i18n.set_locale(language)
+        shared.settings['language'] = language
+        
+        # Save settings immediately
+        output = copy.deepcopy(shared.settings)
+        settings_path = Path('user_data') / 'settings.yaml'
+        with open(settings_path, 'w', encoding='utf-8') as f:
+            yaml.dump(output, sort_keys=False, width=float("inf"), allow_unicode=True)
+            
+        return gr.update(value="Please restart the server to apply changes completely.")
+
+    apply_button.click(
+        on_apply,
+        inputs=[language_dropdown],
+        outputs=[apply_button]
+    )
+    
+    return language_dropdown
+

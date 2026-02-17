@@ -10,7 +10,7 @@ main_parent.style = "padding: 0; margin: 0";
 main_parent.parentNode.style = "gap: 0";
 main_parent.parentNode.parentNode.style = "padding: 0";
 
-document.querySelector(".header_bar").addEventListener("click", function(event) {
+document.querySelector(".header_bar").addEventListener("click", function (event) {
   if (event.target.tagName !== "BUTTON") return;
 
   const buttonText = event.target.textContent.trim();
@@ -58,7 +58,7 @@ function isFocusedOnEditableTextbox() {
 }
 
 let previousTabId = "chat-tab-button";
-document.addEventListener("keydown", function(event) {
+document.addEventListener("keydown", function (event) {
   // Stop generation on Esc pressed
   if (event.key === "Escape") {
     // Find the element with id 'stop' and click it
@@ -69,7 +69,7 @@ document.addEventListener("keydown", function(event) {
     return;
   }
 
-  if (!document.querySelector("#chat-tab").checkVisibility() ) {
+  if (!document.querySelector("#chat-tab").checkVisibility()) {
     return;
   }
 
@@ -146,7 +146,7 @@ targetElement.classList.add("chat-parent");
 window.isScrolled = false;
 let scrollTimeout;
 
-targetElement.addEventListener("scroll", function() {
+targetElement.addEventListener("scroll", function () {
   let diff = targetElement.scrollHeight - targetElement.clientHeight;
   let isAtBottomNow = Math.abs(targetElement.scrollTop - diff) <= 10 || diff == 0;
 
@@ -155,7 +155,7 @@ targetElement.addEventListener("scroll", function() {
     targetElement.classList.add("scrolling");
   }
 
-  if(isAtBottomNow) {
+  if (isAtBottomNow) {
     window.isScrolled = false;
   } else {
     window.isScrolled = true;
@@ -170,7 +170,7 @@ targetElement.addEventListener("scroll", function() {
 });
 
 // Create a MutationObserver instance
-const observer = new MutationObserver(function(mutations) {
+const observer = new MutationObserver(function (mutations) {
   // Check if this is just the scrolling class being toggled
   const isScrollingClassOnly = mutations.every(mutation =>
     mutation.type === "attributes" &&
@@ -281,8 +281,8 @@ function doSyntaxHighlighting() {
             }
           });
         } else if (hasSeenVisible) {
-        // We've seen visible messages but this one is not visible
-        // Since we're going from last to first, we can break
+          // We've seen visible messages but this one is not visible
+          // Since we're going from last to first, we can break
           break;
         }
       }
@@ -296,7 +296,7 @@ function doSyntaxHighlighting() {
 // Add some scrollbars
 //------------------------------------------------
 const textareaElements = document.querySelectorAll(".add_scrollbar textarea");
-for(i = 0; i < textareaElements.length; i++) {
+for (i = 0; i < textareaElements.length; i++) {
   textareaElements[i].classList.remove("scroll-hide");
   textareaElements[i].classList.add("pretty_scrollbar");
   textareaElements[i].style.resize = "none";
@@ -306,7 +306,7 @@ for(i = 0; i < textareaElements.length; i++) {
 // Remove some backgrounds
 //------------------------------------------------
 const noBackgroundelements = document.querySelectorAll(".no-background");
-for(i = 0; i < noBackgroundelements.length; i++) {
+for (i = 0; i < noBackgroundelements.length; i++) {
   noBackgroundelements[i].parentNode.style.border = "none";
   noBackgroundelements[i].parentNode.parentNode.parentNode.style.alignItems = "center";
 }
@@ -417,14 +417,14 @@ document.addEventListener("click", function (event) {
 
   // Handle sidebar clicks on mobile
   if (isMobile()) {
-  // Check if the click did NOT originate from any of the specified toggle buttons or elements
+    // Check if the click did NOT originate from any of the specified toggle buttons or elements
     if (
       target.closest("#navigation-toggle") !== navigationToggle &&
-    target.closest("#past-chats-toggle") !== pastChatsToggle &&
-    target.closest("#chat-controls-toggle") !== chatControlsToggle &&
-    target.closest(".header_bar") !== headerBar &&
-    target.closest("#past-chats-row") !== pastChatsRow &&
-    target.closest("#chat-controls") !== chatControlsRow
+      target.closest("#past-chats-toggle") !== pastChatsToggle &&
+      target.closest("#chat-controls-toggle") !== chatControlsToggle &&
+      target.closest(".header_bar") !== headerBar &&
+      target.closest("#past-chats-row") !== pastChatsRow &&
+      target.closest("#chat-controls") !== chatControlsRow
     ) {
       handleIndividualSidebarClose(event);
     }
@@ -493,7 +493,7 @@ function deleteBigPicture() {
 }
 
 function toggleBigPicture() {
-  if(bigPictureVisible) {
+  if (bigPictureVisible) {
     deleteBigPicture();
     bigPictureVisible = false;
   } else {
@@ -555,7 +555,7 @@ if (document.getElementById("extensions") === null) {
 //------------------------------------------------
 
 document.querySelectorAll(".focus-on-chat-input").forEach(element => {
-  element.addEventListener("click", function() {
+  element.addEventListener("click", function () {
     document.querySelector("#chat-input textarea").focus();
   });
 });
@@ -737,7 +737,7 @@ function toggleSidebar(sidebar, toggle, forceClose = false) {
 
   if (sidebar === headerBar) {
     // Special handling for header bar
-    document.documentElement.style.setProperty("--header-width", shouldClose ? "0px" : "112px");
+    document.documentElement.style.setProperty("--header-width", shouldClose ? "60px" : "200px");
     pastChatsRow.classList.toggle("negative-header", shouldClose);
     pastChatsToggle.classList.toggle("negative-header", shouldClose);
     toggle.innerHTML = shouldClose ? hamburgerMenuSVG : closeMenuSVG;
@@ -775,7 +775,7 @@ function initializeSidebars() {
       el.classList.remove("sidebar-shown");
     });
 
-    document.documentElement.style.setProperty("--header-width", "0px");
+    document.documentElement.style.setProperty("--header-width", "200px");
     pastChatsRow.classList.add("negative-header");
     pastChatsToggle.classList.add("negative-header", "past-chats-closed");
     pastChatsToggle.classList.remove("past-chats-open");
@@ -1061,7 +1061,7 @@ function addMiniDeletes() {
 
 new MutationObserver(() => addMiniDeletes()).observe(
   document.querySelector("#past-chats"),
-  {childList: true, subtree: true}
+  { childList: true, subtree: true }
 );
 addMiniDeletes();
 
@@ -1079,7 +1079,7 @@ document.fonts.addEventListener("loadingdone", (event) => {
   }, 50);
 });
 
-(function() {
+(function () {
   const chatParent = document.querySelector(".chat-parent");
   const chatInputRow = document.querySelector("#chat-input-row");
   const originalMarginBottom = 75;
